@@ -4,12 +4,12 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:Name) %>:</strong></dt>
-  <dd><%= @rating.Name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Rating) %>:</strong></dt>
-  <dd><%= @rating.Rating %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Comment) %>:</strong></dt>
-  <dd><%= @rating.Comment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_name) %>:</strong></dt>
+  <dd><%= @rating.user_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rating) %>:</strong></dt>
+  <dd><%= @rating.rating %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
+  <dd><%= @rating.comment %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

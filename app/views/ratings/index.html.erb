@@ -6,10 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:Name) %></th>
-      <th><%= model_class.human_attribute_name(:Rating) %></th>
-      <th><%= model_class.human_attribute_name(:Comment) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:user_name) %></th>
+      <th><%= model_class.human_attribute_name(:rating) %></th>
+      <th><%= model_class.human_attribute_name(:comment) %></th>
+      <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -17,10 +17,10 @@
     <% @ratings.each do |rating| %>
       <tr>
         <td><%= link_to rating.id, rating_path(rating) %></td>
-        <td><%= rating.Name %></td>
-        <td><%= rating.Rating %></td>
-        <td><%= rating.Comment %></td>
-        <td><%=l rating.created_at %></td>
+        <td><%= rating.user_name %></td>
+        <td><%= rating.rating %></td>
+        <td><%= rating.comment %></td>
+        <!-- <td><%=l rating.created_at %></td> -->
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_rating_path(rating), :class => 'btn btn-default btn-xs' %>

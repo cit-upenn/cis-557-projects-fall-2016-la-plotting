@@ -11,14 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030001213) do
+ActiveRecord::Schema.define(version: 20161113025111) do
 
-  create_table "ratings", force: :cascade do |t|
-    t.string   "Name"
-    t.float    "Rating"
-    t.string   "Comment"
+  create_table "organizations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "size"
+    t.string   "type"
+    t.string   "address"
+    t.string   "city"
+    t.integer  "zip"
+    t.string   "county"
+    t.string   "state"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "ratings", force: :cascade do |t|
+    t.string   "user_name"
+    t.float    "rating"
+    t.text     "comment"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "organizations_id"
+  end
+
+  add_index "ratings", ["organizations_id"], name: "index_ratings_on_organizations_id"
 
 end
