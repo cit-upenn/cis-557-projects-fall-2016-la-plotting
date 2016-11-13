@@ -17,13 +17,13 @@ class Rating < ActiveRecord::Base
                             counter_cache: true,
                             foreign_key: 'organizations_id'
 
-  validates :user_name, presence: { message: 'Your preferred name to display must be given.' }
-                        length: { in: 3..12 ,
-                                  message: 'The length of your preferred name should be between 3 and 12.' }
+  validates :user_name, presence: { message: 'Your preferred name to display must be given.' },
+                        length: { maximum: 12,
+                                  message: 'Your user name should be shorter than 12 letters.' }
 
   validates :rating, presence: { message: 'You must specify a rating on this organization' },
-                     numericality: { greater_than_or_equal_to:00.0,
-                                     less_than_or_equal_to:10.0
+                     numericality: { greater_than_or_equal_to:0,
+                                     less_than_or_equal_to:10,
                                      message: 'The rating should range 0 - 10' }
 
   validates :comment, length: { maximum: 300,
