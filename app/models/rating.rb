@@ -4,7 +4,7 @@
 #
 #  id               :integer          not null, primary key
 #  user_name        :string
-#  rating           :float
+#  rating           :decimal(3, 1)
 #  comment          :text
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
