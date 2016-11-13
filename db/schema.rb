@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113060158) do
+ActiveRecord::Schema.define(version: 20161113172614) do
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
     t.string   "size"
-    t.string   "type"
+    t.string   "org_type"
     t.string   "address"
     t.string   "city"
     t.integer  "zip"
