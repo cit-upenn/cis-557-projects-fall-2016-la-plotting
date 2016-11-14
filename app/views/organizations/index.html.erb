@@ -1,6 +1,6 @@
 <h3>Listing organizations</h3>
 
-<table>
+<table id='tbl-org'>
   <tr>
     <th>ID</th>
     <th>Name</th>
@@ -15,7 +15,8 @@
       <td><%= organization.name %></td>
       <td><%= organization.size %></td>
       <td><%= organization.org_type %></td>
-      <td><%= link_to "Add Comments", new_rating_path %></td>
+      <!-- <td><%= link_to "Add Comments", new_rating_path %></td> -->
+      <td><a href= '<%= new_rating_path %>' id='<%= organization.id %>'>Add Comments</a></td>
     </tr>
   <% end %>
 </table>

@@ -15,8 +15,8 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /^the rating creation page/
-      '/ratings'
+    when /^the organization list index page/
+      '/'
     when /^the add new rating page/
       '/ratings/new'
 
