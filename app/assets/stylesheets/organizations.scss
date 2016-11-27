@@ -17,6 +17,11 @@
   height: 50px;
 }
 
-#tbl-oneorg tr td:first-child{
+#tbl-oneorgrating tr td{
+  height: 30px;
+}
+
+#tbl-oneorg tr td:first-child,
+.tbl-rating-colname{
   font-weight: bold;
 }

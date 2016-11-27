@@ -18,6 +18,14 @@
   </table>
 </div>
 <div>
+  <table id='tbl-oneorgrating'>
+    <tr><td class='tbl-rating-colname'>Average Score:</td></tr>
+    <tr><td><%= @average %></td></tr>
+    <tr><td class='tbl-rating-colname'>Most recent comment:</td>
+    <tr><td><%= @comment %></td></tr>
+  </table>
+</div>
+<div>
   <%= link_to 'Back',
               organizations_path,
               :class => 'btn btn-default' %>
