@@ -19,6 +19,6 @@
 #
 
 class Organization < ActiveRecord::Base
-  has_many :ratings, inverse_of: :organization,dependent: :delete_all
+  has_many :ratings, inverse_of: :organization, dependent: :delete_all
   # validates_associated :ratings
 end

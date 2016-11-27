@@ -23,11 +23,11 @@
     <%=f.error_span(:user_name) %>
   </div>
   <div class="form-group">
-    <%= f.label :rating, :class => 'control-label col-lg-2' %>
+    <%= f.label :score, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :rating, :class => 'form-control' %>
+      <%= f.text_field :score, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:rating) %>
+    <%=f.error_span(:score) %>
   </div>
   <div class="form-group">
     <%= f.label :comment, :class => 'control-label col-lg-2' %>
@@ -35,6 +35,13 @@
       <%= f.text_field :comment, :class => 'form-control' %>
     </div>
     <%=f.error_span(:comment) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :organization_id %><br>
+    <div class="col-lg-10">
+      <%= collection_select :rating, :organization_id, Organization.all, :id, :name %>
+    </div>
+    <%=f.error_span(:organization_id) %>
   </div>
 
   <div class="form-group">

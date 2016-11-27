@@ -1,28 +1,23 @@
 # == Route Map
 #
-#            Prefix Verb   URI Pattern                       Controller#Action
-#           ratings GET    /ratings(.:format)                ratings#index
-#                   POST   /ratings(.:format)                ratings#create
-#        new_rating GET    /ratings/new(.:format)            ratings#new
-#       edit_rating GET    /ratings/:id/edit(.:format)       ratings#edit
-#            rating GET    /ratings/:id(.:format)            ratings#show
-#                   PATCH  /ratings/:id(.:format)            ratings#update
-#                   PUT    /ratings/:id(.:format)            ratings#update
-#                   DELETE /ratings/:id(.:format)            ratings#destroy
-#     organizations GET    /organizations(.:format)          organizations#index
-#                   POST   /organizations(.:format)          organizations#create
-#  new_organization GET    /organizations/new(.:format)      organizations#new
-# edit_organization GET    /organizations/:id/edit(.:format) organizations#edit
-#      organization GET    /organizations/:id(.:format)      organizations#show
-#                   PATCH  /organizations/:id(.:format)      organizations#update
-#                   PUT    /organizations/:id(.:format)      organizations#update
-#                   DELETE /organizations/:id(.:format)      organizations#destroy
+#                  Prefix Verb  URI Pattern                                           Controller#Action
+#                    root GET   /                                                     organizations#index
+#    organization_ratings GET   /organizations/:organization_id/ratings(.:format)     ratings#index
+#                         POST  /organizations/:organization_id/ratings(.:format)     ratings#create
+# new_organization_rating GET   /organizations/:organization_id/ratings/new(.:format) ratings#new
+#             edit_rating GET   /ratings/:id/edit(.:format)                           ratings#edit
+#                  rating GET   /ratings/:id(.:format)                                ratings#show
+#                         PATCH /ratings/:id(.:format)                                ratings#update
+#                         PUT   /ratings/:id(.:format)                                ratings#update
+#           organizations GET   /organizations(.:format)                              organizations#index
+#            organization GET   /organizations/:id(.:format)                          organizations#show
 #
 
 Rails.application.routes.draw do
   root 'organizations#index'
-  resources :ratings
-  resources :organizations
+  resources :organizations, only: [:index, :show] do
+    resources :ratings, shallow: true, except: :destroy
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

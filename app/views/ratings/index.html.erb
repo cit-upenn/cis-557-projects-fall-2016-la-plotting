@@ -7,10 +7,9 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:user_name) %></th>
-      <th><%= model_class.human_attribute_name(:rating) %></th>
+      <th><%= model_class.human_attribute_name(:score) %></th>
       <th><%= model_class.human_attribute_name(:comment) %></th>
-      <th><%= model_class.human_attribute_name(:organizations_id) %></th>
-      <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
+      <th><%= model_class.human_attribute_name(:organization_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,9 +18,9 @@
       <tr>
         <td><%= link_to rating.id, rating_path(rating) %></td>
         <td><%= rating.user_name %></td>
-        <td><%= rating.rating %></td>
+        <td><%= rating.score %></td>
         <td><%= rating.comment %></td>
-        <td><%= rating.organizations_id %></td>
+        <td><%= rating.organization_id %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_rating_path(rating), :class => 'btn btn-default btn-xs' %>
