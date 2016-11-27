@@ -14,7 +14,8 @@ class RatingsController < ApplicationController
 
   # GET /ratings/new
   def new
-    @rating = Rating.new
+    @organization = Organization.find(params[:organization_id])
+    @rating = @organization.ratings.build
   end
 
   # GET /ratings/1/edit
@@ -24,7 +25,8 @@ class RatingsController < ApplicationController
   # POST /ratings
   # POST /ratings.json
   def create
-    @rating = Rating.new(rating_params)
+    @organization = Organization.find(params[:organization_id])
+    @rating = @organization.ratings.build(rating_params)
 
     respond_to do |format|
       if @rating.save

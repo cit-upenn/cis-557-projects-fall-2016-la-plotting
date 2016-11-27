@@ -1,55 +1,50 @@
-<%= form_for @rating, :html => { :class => "form-horizontal rating" } do |f| %>
+<%= form_for [@organization, @rating], :html => { :class => "form-horizontal rating" } do |f| %>
 
-  <% if @rating.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @rating.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+<!-- @rating, :url=>organization_rating_path(@organization) -->
+<% if @rating.errors.any? %>
+  <div id="error_expl" class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h3>
     </div>
-  <% end %>
+    <div class="panel-body">
+      <ul>
+      <% @rating.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
 
-  <div class="form-group">
-    <%= f.label :user_name, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :user_name, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:user_name) %>
+<div class="form-group">
+  <h4><%= @rating.organization.name %></h4>
+  <%= f.label :user_name, :class => 'control-label col-lg-2' %>
+  <div class="col-lg-10">
+    <%= f.text_field :user_name, :class => 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :score, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :score, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:score) %>
+  <%=f.error_span(:user_name) %>
+</div>
+<div class="form-group">
+  <%= f.label :score, :class => 'control-label col-lg-2' %>
+  <div class="col-lg-10">
+    <%= f.text_field :score, :class => 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :comment, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :comment, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:comment) %>
+  <%=f.error_span(:score) %>
+</div>
+<div class="form-group">
+  <%= f.label :comment, :class => 'control-label col-lg-2' %>
+  <div class="col-lg-10">
+    <%= f.text_field :comment, :class => 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :organization_id %><br>
-    <div class="col-lg-10">
-      <%= collection_select :rating, :organization_id, Organization.all, :id, :name %>
-    </div>
-    <%=f.error_span(:organization_id) %>
-  </div>
+  <%=f.error_span(:comment) %>
+</div>
 
-  <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                organizations_path, :class => 'btn btn-default' %>
-    </div>
+<div class="form-group">
+  <div class="col-lg-offset-2 col-lg-10">
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+              organization_path(@rating.organization), :class => 'btn btn-default' %>
+    <%= f.submit nil, :class => 'btn btn-primary' %>
   </div>
+</div>
 
 <% end %>

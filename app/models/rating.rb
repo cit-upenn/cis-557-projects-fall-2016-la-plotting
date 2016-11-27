@@ -14,7 +14,6 @@
 class Rating < ActiveRecord::Base
   belongs_to :organization, -> { readonly },
                             inverse_of: :ratings,
-                            counter_cache: true,
                             foreign_key: 'organization_id'
 
   validates :user_name, presence: { message: 'Your preferred name to display must be given' },

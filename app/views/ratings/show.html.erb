@@ -4,6 +4,8 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong>Organization Name:</strong></dt>
+  <dd><%= @rating.organization.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:user_name) %>:</strong></dt>
   <dd><%= @rating.user_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:score) %>:</strong></dt>
@@ -13,9 +15,9 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              organizations_path, :class => 'btn btn-default'  %>
+              organization_path(@rating.organization), :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_rating_path(@rating), :class => 'btn btn-default' %>
+              edit_rating_path(@rating), :class => 'btn btn-primary' %>
 <!-- <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               organizations_path(@rating),
               :method => 'delete',

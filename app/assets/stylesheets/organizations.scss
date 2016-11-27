@@ -1,3 +1,22 @@
 // Place all the styles related to the Organizations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#tbl-allorg{
+  width: 100%;
+}
+
+#tbl-allorg tr td{
+  height: 30px;
+}
+
+#tbl-oneorg{
+  width: 70%;
+}
+
+#tbl-oneorg tr td{
+  height: 50px;
+}
+
+#tbl-oneorg tr td:first-child{
+  font-weight: bold;
+}
