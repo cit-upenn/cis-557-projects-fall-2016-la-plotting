@@ -1,7 +1,5 @@
 Feature: Users comment and rate on organizations
   As a user
-  I should be able to add my user name, rating, and comment to an organization
-  So that I can express my opinions on these listed organizations
 
 Scenario: See organization basic information
   Given I am on the individual organization page
