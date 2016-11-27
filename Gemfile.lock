@@ -210,6 +210,7 @@ DEPENDENCIES
   database_cleaner
   jbuilder (~> 2.0)
   jquery-rails
+  json
   launchy
   less-rails
   rails (= 4.2.7.1)

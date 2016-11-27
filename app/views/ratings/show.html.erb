@@ -13,7 +13,6 @@
   <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
   <dd><%= @rating.comment %></dd>
 </dl>
-
 <%= link_to t('.back', :default => t("helpers.links.back")),
               organization_path(@rating.organization), :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
