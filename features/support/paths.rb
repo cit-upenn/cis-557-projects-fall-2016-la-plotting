@@ -18,7 +18,10 @@ module NavigationHelpers
     when /^the organization list index page/
       '/'
     when /^the add new rating page/
-      '/ratings/new'
+      new_organization_rating_path(Organization.find(1646))
+
+    when /^the individual organization page/
+      organization_path(Organization.find(1646))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -11,8 +11,9 @@ Scenario: See organization information listed
 
 Scenario: Visit the organization rating page
   Given I am on the organization list index page
-  When I try to click the Add Comment link
-  Then I am able to visit the organization rating and commenting page
+  When I try to click the More link
+  Then I am able to visit the individual organization page
+
 
 Scenario: Cannot modify organization information on index interface
   Given I am on the organization list index page
