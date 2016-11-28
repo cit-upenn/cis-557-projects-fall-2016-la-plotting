@@ -44,6 +44,7 @@ group :production do
   #this is the postgres gem, if want to install PostGres on this computer, run bundle instal, if not, run bundle install --without production
   gem 'pg'
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
 end
 
 group :development, :test do
