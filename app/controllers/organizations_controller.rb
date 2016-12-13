@@ -2,6 +2,7 @@ class OrganizationsController < ApplicationController
 
   def index
     @organizations = Organization.all
+    js :organizations => @organizations
   end# end of a method
 
   def show

@@ -3,7 +3,7 @@ When(/^I try to add my user name$/) do
 end
 
 When(/^add my rating on this organization$/) do
-  fill_in 'Rating', :with => 8
+  fill_in 'Score', :with => 8
 end
 
 When(/^add my comment on this organization$/) do
@@ -19,11 +19,11 @@ Then(/^I am able to go the page that says "([^"]*)"$/) do |arg1|
 end
 
 When(/^I click the 'Cancel' button to quit adding such information$/) do
-  click_link 'Cancel', :href => "/organizations"
+  click_link 'Cancel'
 end
 
 When(/^I click the 'Cancel' button to quit updating such information$/) do
-  click_link 'Cancel', :href => "/organizations"
+  click_link 'Cancel'
 end
 
 Then(/^I am able to go to organization index page$/) do
@@ -35,7 +35,7 @@ When(/^I added "([^"]*)" as user name$/) do |arg1|
 end
 
 When(/^(\d+) as rating$/) do |arg1|
-    fill_in 'Rating', :with => arg1
+    fill_in 'Score', :with => arg1
 end
 When(/^comment with ''$/) do
   fill_in 'Comment', :with => ""
@@ -50,7 +50,7 @@ When(/^I added no user name$/) do
 end
 
 When(/^added no rating$/) do
-  fill_in 'Rating', :with => nil
+  fill_in 'Score', :with => nil
 end
 
 When(/^leave with a very long comment$/) do

@@ -10,6 +10,32 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require leaflet
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  */
+
+ body{
+   padding: 0;
+   font-family: 'Open Sans', sans-serif;
+ }
+
+ .header{
+   position: absolute;
+   top: 0%;
+   left: 0%;
+   height: 8%;
+   width: 100%;
+   background-color: black;
+   color: white;
+   padding-left: 20px;
+ }
+
+ .content{
+   position: absolute;
+   top:8%;
+   left: 0%;
+   height: 92%;
+   width: 100%;
+ }

@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require twitter/bootstrap
-//= require turbolinks
-//= require_tree .
+//= require paloma
+//= require leaflet
+//= require underscore-min
+//= require ./paloma/organizations/index
+//= require ./paloma/organizations/show
+// require turbolinks

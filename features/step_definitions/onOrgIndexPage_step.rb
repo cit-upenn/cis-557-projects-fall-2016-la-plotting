@@ -7,7 +7,7 @@ When(/^I try to click the More link$/) do
 end
 
 Then(/^I am able to visit the individual organization page$/) do
-  @organization = Organization.find(1703)
+  @organization = Organization.create(name:'Test Organization', latitude: 34.0505261069255, longitude: -118.240632675751, size: 'Medium', org_type:'Community', address:'120 N. Judge John Aiso Street', city:'Los Angeles', zip: 90012, county: 'Loas Angeles', state: 'CA')
   visit(organization_path(@organization))
 end
 

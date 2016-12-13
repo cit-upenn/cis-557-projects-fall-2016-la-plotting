@@ -18,10 +18,12 @@ module NavigationHelpers
     when /^the organization list index page/
       '/'
     when /^the add new rating page/
-      new_organization_rating_path(Organization.find(1646))
+      @organization = Organization.create(name:'Test Organization', latitude: 34.0505261069255, longitude: -118.240632675751, size: 'Medium', org_type:'Community', address:'120 N. Judge John Aiso Street', city:'Los Angeles', zip: 90012, county: 'Loas Angeles', state: 'CA')
+      new_organization_rating_path(@organization)
 
     when /^the individual organization page/
-      organization_path(Organization.find(1646))
+      @organization = Organization.create(name:'Test Organization', latitude: 34.0505261069255, longitude: -118.240632675751, size: 'Medium', org_type:'Community', address:'120 N. Judge John Aiso Street', city:'Los Angeles', zip: 90012, county: 'Loas Angeles', state: 'CA')
+      organization_path(@organization)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -1,6 +1,23 @@
 // Place all the styles related to the Organizations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#map-all-orgs{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80%;
+  height: 100%;
+}
+
+.sidebar-all-orgs{
+  position: absolute;
+  left: 80%;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  padding: 10px;
+}
+
 #tbl-allorg{
   width: 100%;
 }
@@ -24,4 +41,9 @@
 #tbl-oneorg tr td:first-child,
 .tbl-rating-colname{
   font-weight: bold;
+}
+
+.leaflet-marker-icon {
+  border:3px solid rgba(255,255,255,0.5);
+  border-radius:50%;
 }
