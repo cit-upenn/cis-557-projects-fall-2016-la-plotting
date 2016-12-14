@@ -14,6 +14,7 @@ class OrganizationsController < ApplicationController
     @comment = recent_comment(@ratings)
     # Three restaurants in 500 meters radius of this organization from yelp_token
     @restaurants = find_yelp_business(@organization[:latitude], @organization[:longitude])
+    js :organization => @organization, :restaurants => @restaurants
   end# end of a method
 
 
@@ -38,12 +39,12 @@ class OrganizationsController < ApplicationController
     def find_yelp_business(lat, lng)
       yelp_token = 'Bd-zPkv8p5CQldgybJ9mtbEt-5ll_frcOgPCgKTY9j_81fG9-5mdq6C9QIXJQIRguCE8NOP17oWDCB021qrvos_jElK-ebJrP8YOcmCzpkxW4nViDZgCSoEzDhc7WHYx'
       header = "Bearer " + yelp_token
-      url = 'https://api.yelp.com/v3/businesses/search?latitude=' + lat.to_s + '&longitude=' + lng.to_s + '&radius=500&limit=3&categories=restaurants'
+      url = 'https://api.yelp.com/v3/businesses/search?latitude=' + lat.to_s + '&longitude=' + lng.to_s + '&radius=1500&limit=3&categories=restaurants'
       open(url, "Authorization" => header) do |f|
         query_result_string = f.read
         query_result_json = JSON.parse(query_result_string)
         return query_result_json
       end
-    end# end of function
+    end# end of method
 
 end

@@ -10,6 +10,7 @@ Paloma.controller('Organizations', {
 
     //All organizations and their information acquired from the controller
     var organizations = this.params.organizations;
+    console.log(organizations)
     //All organization names
     var orgNames = _.pluck(organizations, 'name');
 
@@ -20,7 +21,7 @@ Paloma.controller('Organizations', {
     //Load the basemap
     var mapAllOrgs = L.map('map-all-orgs', {
       center: [34.0522, -118.2437],
-      zoom: 9
+      zoom: 10
     });
     var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png', {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -37,7 +38,7 @@ Paloma.controller('Organizations', {
       })
       .map(function(organization) {
         organization.marker = L.marker([organization.latitude, organization.longitude],
-                                       { icon: L.divIcon({ className: 'Performing-Arts' }) })
+                                       { icon: L.divIcon({ className: organization.org_type.split(',')[0].split(' ')[0] }) })
                                .bindPopup(organization.name)
                                .on('click', function() {
                                  mapAllOrgs.setView([organization.latitude, organization.longitude], 11)
@@ -95,10 +96,6 @@ Paloma.controller('Organizations', {
       $("#tbl-allorg #row-"+searchedOrgID).clone().appendTo('#tbl-org-searched');
     })
 
-    //Clear organization search result
-
-
-
     //Add back all organizations to the map
     $('#btn-org-clear').on('click',function(){
       //Clear the organization information table from the sidebar
@@ -121,7 +118,5 @@ Paloma.controller('Organizations', {
       layerAllOrgs = _.map(dataAllOrgs, function(organization) { return organization.marker.addTo(mapAllOrgs); });
       mapAllOrgs.setView([34.0522, -118.2437], 9);
     });
-
-
   }
 });

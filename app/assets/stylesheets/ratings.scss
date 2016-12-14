@@ -1,3 +1,37 @@
 // Place all the styles related to the Ratings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-cancel,
+.btn-submit,
+.btn-back,
+.btn-edit{
+  margin: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 2px solid #5c5c5c;
+  color: black;
+}
+
+.btn-cancel,
+.btn-back,
+.btn-edit{
+  padding: 11px 30px 11px 30px;
+}
+
+.btn-submit{
+  padding: 10px;
+}
+
+.dl-horizontal{
+  font-size: 16px;
+}
+
+.dl-horizontal dt{
+  margin: 30px 10px 0px 10px;
+}
+
+.dl-horizontal dd{
+  padding: 30px 10px 0px 10px;
+}

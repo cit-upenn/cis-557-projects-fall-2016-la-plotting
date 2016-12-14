@@ -1,39 +1,45 @@
-<div>
-  <h2><%= @organization.name %></h2>
-</div>
-<div>
-  <table id='tbl-oneorg'>
-    <tr>
-      <td>Address</td>
-      <td id='org-address'><%= @organization.address + ", " + @organization.city + ", " + @organization.state + "" + @organization.zip.to_s %></td>
-    </tr>
-    <tr>
-      <td>Budget</td>
-      <td id='org-size'><%= @organization.size %></td>
-    </tr>
-    <tr>
-      <td>Type</td>
-      <td id='org-type'><%= @organization.org_type %></td>
-    </tr>
-  </table>
-</div>
-<div>
-  <table id='tbl-oneorgrating'>
-    <tr><td class='tbl-rating-colname'>Average Score:</td></tr>
-    <tr><td id='org-rating'><%= @average %></td></tr>
-    <tr><td class='tbl-rating-colname'>Most recent comment:</td>
-    <tr><td id='org-comment'><%= @comment %></td></tr>
-  </table>
-</div>
-<div>
-  <h4>Restaurants near this organization</h4>
-  <p id='yelp-restaurants'><%= @restaurants %></p>
-</div>
-<div>
-  <%= link_to 'Back',
-              organizations_path,
-              :class => 'btn btn-default' %>
-  <%= link_to 'Comment',
-              new_organization_rating_path(@organization),
-              :class => 'btn btn-primary' %>
+<div id='map-one-org'></div>
+
+<div class="sidebar-one-org">
+  <div>
+    <h3><%= @organization.name %></h3>
+  </div>
+  <div>
+    <table id='tbl-oneorg'>
+      <tr>
+        <td>Address</td>
+        <td id='org-address'><%= @organization.address + ", " + @organization.city + ", " + @organization.state + "" + @organization.zip.to_s %></td>
+      </tr>
+      <tr>
+        <td>Budget</td>
+        <td id='org-size'><%= @organization.size %></td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td id='org-type'><%= @organization.org_type %></td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <h4><u><b>User Ratings</b></u></h4>
+    <table id='tbl-oneorgrating'>
+      <tr><td class='tbl-rating-colname'>Average Score:&nbsp;&nbsp;<span id='org-rating'><%= @average %></span></td>
+      <tr><td class='tbl-rating-colname'>The most recent comment:</td>
+      <tr><td id='org-comment'><%= @comment %></td></tr>
+    </table>
+  </div><br>
+  <div>
+    <%= link_to 'Back',
+                organizations_path,
+                :class => 'btn-back' %>
+    <%= link_to 'Comment',
+                new_organization_rating_path(@organization),
+                :class => 'btn-comment' %>
+  </div><br>
+  <div>
+    <h4><u><b>Nearby Restaurants</b></u>&nbsp;&nbsp;<input type="checkbox" id='ck-nearby-restaurants'></h4>
+    <div id='yelp-restaurants'>
+    </div>
+  </div>
+
 </div>

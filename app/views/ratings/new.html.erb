@@ -1,5 +1,5 @@
 <%- model_class = Rating -%>
-<div class="page-header">
+<div class="page-header" style="padding-left: 20px;">
   <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
 </div>
 <%= render :partial => 'form' %>
