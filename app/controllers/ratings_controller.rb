@@ -1,11 +1,12 @@
 class RatingsController < ApplicationController
-  before_action :set_rating, only: [:show, :edit, :update, :destroy]
+  before_action :set_rating, only: [:show, :edit, :update]
 
+  # the index action is restricted by the routing
   # GET /ratings
   # GET /ratings.json
-  def index
-    @ratings = Rating.all
-  end
+  # def index
+  #   @ratings = Rating.all
+  # end
 
   # GET /ratings/1
   # GET /ratings/1.json
@@ -53,15 +54,16 @@ class RatingsController < ApplicationController
     end
   end
 
+  # the delete action is restricted by routing
   # DELETE /ratings/1
   # DELETE /ratings/1.json
-  def destroy
-    @rating.destroy
-    respond_to do |format|
-      format.html { redirect_to ratings_url, notice: 'Rating was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @rating.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to ratings_url, notice: 'Rating was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'paloma', '~> 5.0.0'
 
+gem 'simplecov', :require => false, :group => :test
+
 require 'rubygems'
 require 'open-uri'
 require 'uri'

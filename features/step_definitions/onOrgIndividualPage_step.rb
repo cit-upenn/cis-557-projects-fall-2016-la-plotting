@@ -49,3 +49,11 @@ end
 Then(/^I am able to go to the organization comment page$/) do
   visit(new_organization_rating_path(@organization))
 end
+
+When(/^I check the nearby restaurants check box$/) do
+  find(:css, "#ck-nearby-restaurants").set(true)
+end
+
+Then(/^I am able to see three restaurant information$/) do
+  page.has_css?("table.tbl-yelp-restaurant", :count=>3)
+end

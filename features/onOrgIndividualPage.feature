@@ -1,5 +1,4 @@
 Feature: Users comment and rate on organizations
-  As a user
 
 Scenario: See a map
   Given I am on the individual organization page
@@ -25,7 +24,6 @@ Scenario: See organization budget
 Scenario: See organization's rating information
   Given I am on the individual organization page
   Then I am able to see organization's average rating score
-  Then I am able to see organization's latest comments
 
 Scenario: See organization's latest comment
   Given I am on the individual organization page
@@ -48,3 +46,8 @@ Scenario: Go to comment on this organization
   Given I am on the individual organization page
   When I click the comment button
   Then I am able to go to the organization comment page
+
+Scenario: Click to see nearby restaurants' information
+  Given I am on the individual organization page
+  When I check the nearby restaurants check box
+  Then I am able to see three restaurant information

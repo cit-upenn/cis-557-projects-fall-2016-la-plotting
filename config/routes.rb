@@ -16,7 +16,7 @@
 Rails.application.routes.draw do
   root 'organizations#index'
   resources :organizations, only: [:index, :show] do
-    resources :ratings, shallow: true, except: :destroy
+    resources :ratings, shallow: true, except: [:destroy, :index]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -18,13 +18,22 @@ module NavigationHelpers
     when /^the organization list index page/
       '/'
     when /^the add new rating page/
-      @organization = Organization.create(name:'Test Organization', latitude: 34.0505261069255, longitude: -118.240632675751, size: 'Medium', org_type:'Community', address:'120 N. Judge John Aiso Street', city:'Los Angeles', zip: 90012, county: 'Loas Angeles', state: 'CA')
+      @organization = Organization.create(name:'Test Organization', latitude: 34.0505261069255, longitude: -118.240632675751, size: 'Medium', org_type:'Community', address:'120 N. Judge John Aiso Street', city:'Los Angeles', zip: 90012, county: 'Los Angeles', state: 'CA')
       new_organization_rating_path(@organization)
 
     when /^the individual organization page/
-      @organization = Organization.create(name:'Test Organization', latitude: 34.0505261069255, longitude: -118.240632675751, size: 'Medium', org_type:'Community', address:'120 N. Judge John Aiso Street', city:'Los Angeles', zip: 90012, county: 'Loas Angeles', state: 'CA')
-      @organization.ratings.create(user_name: 'Blake', score: 8.9, comment: "love it!")
+      @organization = Organization.create(name:'Test Organization', latitude: 34.0505261069255, longitude: -118.240632675751, size: 'Medium', org_type:'Community', address:'120 N. Judge John Aiso Street', city:'Los Angeles', zip: 90012, county: 'Los Angeles', state: 'CA')
+      @rating = @organization.ratings.create(user_name: 'Blake', score: 8.9, comment: "love it!")
       organization_path(@organization)
+
+    when /^the all organization landing pag/
+      '/'
+
+    when /^the edit organization rating page/
+      @organization = Organization.create(name:'Test Organization', latitude: 34.0505261069255, longitude: -118.240632675751, size: 'Medium', org_type:'Community', address:'120 N. Judge John Aiso Street', city:'Los Angeles', zip: 90012, county: 'Los Angeles', state: 'CA')
+      @rating = @organization.ratings.create(user_name: 'Blake', score: 8.9, comment: "love it!")
+      edit_rating_path(@rating)
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
