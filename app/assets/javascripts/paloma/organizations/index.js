@@ -10,7 +10,7 @@ Paloma.controller('Organizations', {
 
     //All organizations and their information acquired from the controller
     var organizations = this.params.organizations;
-    console.log(organizations)
+    // console.log(organizations)
     //All organization names
     var orgNames = _.pluck(organizations, 'name');
 
@@ -41,7 +41,9 @@ Paloma.controller('Organizations', {
                                        { icon: L.divIcon({ className: organization.org_type.split(',')[0].split(' ')[0] }) })
                                .bindPopup(organization.name)
                                .on('click', function() {
-                                 mapAllOrgs.setView([organization.latitude, organization.longitude], 11)
+                                 mapAllOrgs.setView([organization.latitude, organization.longitude], 11);
+                                 $('#tbl-org-searched').empty();
+                                 $("#tbl-allorg #row-"+organization.id).clone().appendTo('#tbl-org-searched');
                                });
         return organization;
       })

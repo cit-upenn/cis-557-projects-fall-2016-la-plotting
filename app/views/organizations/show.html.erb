@@ -1,45 +1,108 @@
-<div id='map-one-org'></div>
+<div id='map-one-org'>
+</div>
 
 <div class="sidebar-one-org">
-  <div>
-    <h3><%= @organization.name %></h3>
-  </div>
-  <div>
-    <table id='tbl-oneorg'>
-      <tr>
-        <td>Address</td>
-        <td id='org-address'><%= @organization.address + ", " + @organization.city + ", " + @organization.state + "" + @organization.zip.to_s %></td>
-      </tr>
-      <tr>
-        <td>Budget</td>
-        <td id='org-size'><%= @organization.size %></td>
-      </tr>
-      <tr>
-        <td>Type</td>
-        <td id='org-type'><%= @organization.org_type %></td>
-      </tr>
-    </table>
-  </div>
-  <div>
-    <h4><u><b>User Ratings</b></u></h4>
-    <table id='tbl-oneorgrating'>
-      <tr><td class='tbl-rating-colname'>Average Score:&nbsp;&nbsp;<span id='org-rating'><%= @average %></span></td>
-      <tr><td class='tbl-rating-colname'>The most recent comment:</td>
-      <tr><td id='org-comment'><%= @comment %></td></tr>
-    </table>
-  </div><br>
-  <div>
-    <%= link_to 'Back',
-                organizations_path,
-                :class => 'btn-back' %>
-    <%= link_to 'Comment',
-                new_organization_rating_path(@organization),
-                :class => 'btn-comment' %>
-  </div><br>
-  <div>
-    <h4><u><b>Nearby Restaurants</b></u>&nbsp;&nbsp;<input type="checkbox" id='ck-nearby-restaurants'></h4>
-    <div id='yelp-restaurants'>
+  <div class="col-md-12">
+    <div id='btn-back'>
+      <%= link_to 'Back',organizations_path, :id => 'link-back'%>
+    </div>
+
+  </div><br><br>
+
+  <div class="col-md-12 panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <h4><b>Organization Information</b></h4>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <div>
+          <h4><%= @organization.name %></h4>
+        </div>
+        <div>
+          <table id='tbl-oneorg'>
+            <tr>
+              <td>Address</td>
+              <td id='org-address'><%= @organization.address + ", " + @organization.city + ", " + @organization.state + "" + @organization.zip.to_s %></td>
+            </tr>
+            <tr>
+              <td>Budget</td>
+              <td id='org-size'><%= @organization.size %></td>
+            </tr>
+            <tr>
+              <td>Type</td>
+              <td id='org-type'><%= @organization.org_type %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <h4><b>User Ratings</b></h4>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <div>
+          <table id='tbl-oneorgrating'>
+            <tr><td class='tbl-rating-colname'>Average Score:</td>
+            <tr><td id='org-rating'><%= @average %></td></tr>
+            <tr><td class='tbl-rating-colname'>The most recent comment:</td>
+            <tr><td id='org-comment'><%= @comment %></td></tr>
+          </table>
+        </div><br>
+        <div id='btn-comment'>
+          <!-- <%= link_to 'Back',
+                      organizations_path,
+                      :class => 'btn-back' %> -->
+          <%= link_to 'Comment',
+                      new_organization_rating_path(@organization),
+                      :class => 'btn-comment' %>
+        </div><br>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <h4><b>Find Nearby</b></h4>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <div>
+          <div><h4>Show Nearby&nbsp;&nbsp;<input type="checkbox" id='ck-nearby-restaurants'></h4></div>
+          <div id='show-nearby'>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active" id='tab-res'><a href="#res" aria-controls="home" role="tab" data-toggle="tab">Restaurants</a></li>
+              <li role="presentation" id='tab-bar'><a href="#bar" aria-controls="profile" role="tab" data-toggle="tab">Bars</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="res">
+                <div id='yelp-restaurants'></div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="bar">
+                <div id='yelp-bars'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>

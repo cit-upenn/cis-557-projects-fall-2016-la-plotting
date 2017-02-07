@@ -13,9 +13,10 @@ class OrganizationsController < ApplicationController
     # The most recent non-empty comment on this organization
     @comment = recent_comment(@ratings)
     # Three restaurants in 1500 meters radius of this organization from yelp_token
-    @restaurants = find_yelp_business(@organization[:latitude], @organization[:longitude])
+    @restaurants = find_yelp_business(@organization[:latitude], @organization[:longitude], 'restaurants')
+    @bars = find_yelp_business(@organization[:latitude], @organization[:longitude], 'bars')
     #the paloma gem uses this to pass variables from contoller to javascript
-    js :organization => @organization, :restaurants => @restaurants
+    js :organization => @organization, :restaurants => @restaurants, :bars => @bars
   end# end of a method
 
 
@@ -37,10 +38,10 @@ class OrganizationsController < ApplicationController
       end
     end# end of method
 
-    def find_yelp_business(lat, lng)
+    def find_yelp_business(lat, lng, type)
       # the yelp token is set to an environment variable
       header = "Bearer " + ENV['YELP_TOKEN']
-      url = 'https://api.yelp.com/v3/businesses/search?latitude=' + lat.to_s + '&longitude=' + lng.to_s + '&radius=1500&limit=3&categories=restaurants'
+      url = 'https://api.yelp.com/v3/businesses/search?latitude=' + lat.to_s + '&longitude=' + lng.to_s + "&radius=1500&limit=10&categories=#{type}"
       open(url, "Authorization" => header) do |f|
         query_result_string = f.read
         query_result_json = JSON.parse(query_result_string)

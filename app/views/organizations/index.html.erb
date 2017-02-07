@@ -3,8 +3,8 @@
 <div class="sidebar-all-orgs">
   <form id='form-org-search'>
     <input type="text" placeholder="Organization Name..." id='searchbox-org-name'><br>
-    <input type="button" value="Search" id='btn-org-search'>
-    <input type="button" value="Clear" id='btn-org-clear'>
+    <div><input type="button" value="Search" id='btn-org-search'></div>
+    <div><input type="button" value="Clear" id='btn-org-clear'></div>
   </form>
   <table id='tbl-org-searched'>
   </table>
@@ -17,3 +17,4 @@
     <% end %>
   </table>
 </div>
+<%= render :partial => 'legend' %>
