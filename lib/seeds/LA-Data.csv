@@ -1,4 +1,4 @@
-OrgID,Name,Size,Type,StAdd,City,Zip,County,State,Latitude,Longitude
+ï»¿OrgID,Name,Size,Type,StAdd,City,Zip,County,State,Latitude,Longitude
 1646,Visual Communications,Medium,"Broadcasters, Producers, TV, Film & Digital Media",120 Judge John Aiso Street,Los Angeles,90012,Los Angeles,CA,34.05052611,-118.2406327
 1651,Reprise Theatre Company,Large,Performing Arts,1575 WESTWOOD BLVD,Los Angeles,90024,Los Angeles,CA,34.05269005,-118.4399006
 1654,Floricanto Dance Theatre,Small,Performing Arts,2758 East Orange Grove Blvd.,Pasadena,91107,Los Angeles,CA,34.15813503,-118.0934659
@@ -52,7 +52,7 @@ OrgID,Name,Size,Type,StAdd,City,Zip,County,State,Latitude,Longitude
 1863,Yiddishkayt Los Angeles,Small,Community,3780 Wilshire Blvd,Los Angeles,90010,Los Angeles,CA,34.06160511,-118.308613
 1867,Long Beach Opera,Large,Performing Arts,507 Pacific Avenue,Long Beach,90802,Los Angeles,CA,33.77298625,-118.1938012
 1869,Santa Monica Conservancy,Very Small,"Museums, Visual Arts, History",P.O. Box 653,Santa Monica,90406,Los Angeles,CA,34.018176,-118.497198
-1880,"Actors¡¯ Gang, The",Large,Performing Arts,9070 Venice Blvd.,Culver City,90232,Los Angeles,CA,34.02646499,-118.3929625
+1880,"Actorsâ€™ Gang, The",Large,Performing Arts,9070 Venice Blvd.,Culver City,90232,Los Angeles,CA,34.02646499,-118.3929625
 1887,CMA (Claremont Museum of Art),Small,"Museums, Visual Arts, History",536 West First Street,Claremont,91711,Los Angeles,CA,34.09447858,-117.7211874
 1889,Los Angeles Jewish Symphony,Small,Performing Arts,17455 La Cuesta Lane,Encino,91316,Los Angeles,CA,34.15242218,-118.512835
 1890,Grand Performances,Large,Performing Arts,350 South Grand Avenue,Los Angeles,90071,Los Angeles,CA,34.05166168,-118.2513869
