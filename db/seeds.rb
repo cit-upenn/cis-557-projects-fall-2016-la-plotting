@@ -8,23 +8,30 @@
 require 'csv'
 # require 'pathname'
 #
-csv_text = File.read(Rails.root.join("lib", "seeds", "la_sample.csv"))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-  t = Organization.new
-  t.id = row['OrgID']
-  t.name = row['Name']
-  t.size = row['Size']
-  t.org_type = row['Type']
-  t.address = row['StAdd']
-  t.city = row['City']
-  t.zip = row['Zip']
-  t.county = row['County']
-  t.state = row['State']
-  t.latitude = row['Latitude']
-  t.longitude = row['Longitude']
-  t.save
-  puts "#{t.id}, #{t.name} saved"
-end
+# csv_text = File.read(Rails.root.join("lib", "seeds", "la_sample.csv"))
+# csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+# csv.each do |row|
+#   t = Organization.new
+#   t.id = row['OrgID']
+#   t.name = row['Name']
+#   t.size = row['Size']
+#   t.org_type = row['Type']
+#   t.address = row['StAdd']
+#   t.city = row['City']
+#   t.zip = row['Zip']
+#   t.county = row['County']
+#   t.state = row['State']
+#   t.latitude = row['Latitude']
+#   t.longitude = row['Longitude']
+#   t.save
+#   puts "#{t.id}, #{t.name} saved"
+# end
+#
+# puts "There are now #{Organization.count} rows in the organization table"
 
-puts "There are now #{Organization.count} rows in the organization table"
+old_ids = [1655, 1646, 1711, 1841, 9241, 2727, 1853, 2023, 1703]
+
+old_ids.each do |old_id|
+  org = Organization.find_by(id: old_id)
+  org.destroy
+end
