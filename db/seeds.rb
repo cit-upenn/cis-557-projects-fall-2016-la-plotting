@@ -8,6 +8,7 @@
 require 'csv'
 # require 'pathname'
 #
+# The first seed of sample dataset
 # csv_text = File.read(Rails.root.join("lib", "seeds", "la_sample.csv"))
 # csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 # csv.each do |row|
@@ -29,9 +30,17 @@ require 'csv'
 #
 # puts "There are now #{Organization.count} rows in the organization table"
 
+# Destroyed the sample dataset
 old_ids = [1655, 1646, 1711, 1841, 9241, 2727, 1853, 2023, 1703]
 
 old_ids.each do |old_id|
   org = Organization.find_by(id: old_id)
+  org.destroy
+end
+
+# Destroy the empty organziations
+empty_org_ids = [9242, 9243]
+empty_org_ids.each do |empty_org_id|
+  org = Organization.find_by(id: empty_org_id)
   org.destroy
 end
