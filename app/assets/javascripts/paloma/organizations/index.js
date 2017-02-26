@@ -230,10 +230,10 @@ Paloma.controller('Organizations', {
       mapAllOrgs.setView([34.0522, -118.2437], 10);
     });
 
-    $('#tbl-org-type-switch input').on('change', function(){
-      console.log(this.id)
-      console.log($(this).prop('checked'))
-    });
+    // $('#tbl-org-type-switch input').on('change', function(){
+    //   console.log(this.id);
+    //   console.log($(this).prop('checked'));
+    // });
 
   }
 });
