@@ -27,7 +27,7 @@ var setCircleMarkerColor = function(orgType, fillArea){
       return fillArea === 'fill' ? '#228557' : '#185c3c';
       break;
     case "Education":
-      return fillArea === 'fill' ? '#532733' : '#30171e';
+      return fillArea === 'fill' ? '#572285' : '#3c185c';
       break;
     default:
       return 'black';
@@ -229,5 +229,11 @@ Paloma.controller('Organizations', {
       layerVerySmallOrgs = plotMarkers(dataGroupedSizeAllOrgs['5'], mapAllOrgs);
       mapAllOrgs.setView([34.0522, -118.2437], 10);
     });
+
+    $('#tbl-org-type-switch input').on('change', function(){
+      console.log(this.id)
+      console.log($(this).prop('checked'))
+    });
+
   }
 });
