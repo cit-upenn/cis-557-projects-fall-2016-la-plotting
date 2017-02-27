@@ -7,6 +7,18 @@
     <div><input type='button' value='Clear' id='btn-org-clear'></div>
   </form>
   <hr>
+  <table id=tbl-heatmap>
+    <tr>
+      <td><h4>Heat Map</h4></td>
+      <td>
+        <div id='div-heatmap-ckbox'>
+          <input type="checkbox" name="heatmap" value="heatmap" id='ckbox-heatmap' unchecked>
+          <label for='ckbox-heatmap'></label>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <hr>
   <div id='div-switches'>
     <table class='switch-tbl' id='tbl-switch'>
       <tr><td>Display by Type</td>
@@ -14,7 +26,7 @@
           <td>Display by Size</td>
           <td><label class="switch"><input type="checkbox" id='swith-size' unchecked><div class="slider round"></div></label></td></tr>
     </tabel>
-    <table class='switch-tbl' id='tbl-org-type-switch' title='Clear search to enable switches.'>
+    <table class='switch-tbl' id='tbl-org-type-switch'>
       <tr><td>Education</td>
           <td><label class="switch"><input type="checkbox" id='swith-edu' unchecked><div class="slider"></div></label></td>
           <td>Community</td>
@@ -28,7 +40,7 @@
           <td>Broadcast</td>
           <td><label class="switch"><input type="checkbox" id='swith-bro' unchecked><div class="slider"></div></label></td></tr>
     </table>
-    <table class='switch-tbl' id='tbl-org-size-switch' title='Clear search to enable switches.'>
+    <table class='switch-tbl' id='tbl-org-size-switch'>
       <tr><td>Very Small</td>
           <td><label class="switch"><input type="checkbox" id='swith-vs' unchecked><div class="slider"></div></label></td>
           <td>Small</td>
