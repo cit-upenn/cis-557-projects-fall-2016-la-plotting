@@ -16,6 +16,7 @@
 //= require twitter/bootstrap
 //= require paloma
 //= require leaflet
+//= require leaflet-heat
 //= require underscore-min
 //= require ./paloma/organizations/index
 //= require ./paloma/organizations/show

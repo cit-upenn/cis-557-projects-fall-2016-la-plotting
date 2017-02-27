@@ -1,6 +1,3 @@
-// Place all the styles related to the Organizations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 #map-all-orgs,
 #map-one-org{
   position: absolute;
@@ -151,15 +148,6 @@
     cursor: pointer;
 }
 
-// #btn-comment{
-//   text-align: center;
-//   padding: 10px;
-//   margin: 5px 0 5px 0;
-//   font-weight: bold;
-//   font-size: 14px;
-//   background-color: #ffffff;
-//   border: 2px solid #5c5c5c;
-// }
 
 #ck-nearby-restaurants{
   border: 1px solid black;
@@ -251,8 +239,15 @@
 .switch-tbl tr td:first-child,
 .switch-tbl tr td:nth-child(3){
   width: 40%;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Roboto', sans-serif;
+  padding-bottom: 5px;
+}
+
+#tbl-switch tr td:first-child,
+#tbl-switch tr td:nth-child(3){
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .switch-tbl tr td:nth-child(3)
@@ -316,10 +311,51 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.ui-tooltip {
-  padding: 10px 20px;
-  color: white;
-  background-color: black;
-  border: 1px solid white;
-  z-index: 1000;
+
+#tbl-heatmap{
+  margin-left: 10px;
+  width: 50%;
+}
+
+#tbl-heatmap tr td{
+  width: 50%;
+}
+#tbl-heatmap tr td:last-child{
+  padding-left:25%
+}
+
+
+
+#ckbox-heatmap{
+  visibility: hidden;
+}
+
+#div-heatmap-ckbox{
+  width: 40px;
+	height: 10px;
+  // left: 88%;
+	background: #555;
+	margin: 20px 0px 20px 0px;
+	position: relative;
+	border-radius: 3px;
+}
+
+#div-heatmap-ckbox label{
+  display: block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: -3px;
+	left: -3px;
+
+	background: #ccc;
+}
+
+#div-heatmap-ckbox input[type=checkbox]:checked + label {
+	left: 27px;
+  background: #39a1f4;
 }
