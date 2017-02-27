@@ -4,21 +4,40 @@
   <form id='form-org-search'>
     <input type="text" placeholder="Organization Name..." id='searchbox-org-name'><br>
     <div><input type="button" value="Search" id='btn-org-search'></div>
-    <div><input type="button" value="Clear" id='btn-org-clear'></div>
+    <!-- <div><input type="button" value="Clear" id='btn-org-clear'></div> -->
   </form>
-  <table id='tbl-org-type-switch'>
+  <table class='switch-tbl' id='tbl-switch'>
+    <tr><td>Display by Type</td>
+        <td><label class="switch"><input type="checkbox" id='swith-type' unchecked><div class="slider round"></div></label></td>
+        <td>Display by Size</td>
+        <td><label class="switch"><input type="checkbox" id='swith-size' unchecked><div class="slider round"></div></label></td></tr>
+  </tabel>
+  <table class='switch-tbl' id='tbl-org-type-switch'>
     <tr><td>Education</td>
-        <td><label class="switch"><input type="checkbox" id='swith-edu' checked><div class="slider"></div></label></td>
+        <td><label class="switch"><input type="checkbox" id='swith-edu' unchecked><div class="slider"></div></label></td>
         <td>Community</td>
-        <td><label class="switch"><input type="checkbox" id='swith-com' checked><div class="slider"></div></label></td></tr>
+        <td><label class="switch"><input type="checkbox" id='swith-com' unchecked><div class="slider"></div></label></td></tr>
     <tr><td>Performing Arts</td>
-        <td><label class="switch"><input type="checkbox" id='swith-per' checked><div class="slider"></div></label></td>
+        <td><label class="switch"><input type="checkbox" id='swith-per' unchecked><div class="slider"></div></label></td>
         <td>Support & Advocacy</td>
-        <td><label class="switch"><input type="checkbox" id='swith-sup' checked><div class="slider"></div></label></td></tr>
+        <td><label class="switch"><input type="checkbox" id='swith-sup' unchecked><div class="slider"></div></label></td></tr>
     <tr><td>Museums</td>
-        <td><label class="switch"><input type="checkbox" id='swith-mus' checked><div class="slider"></div></label></td>
+        <td><label class="switch"><input type="checkbox" id='swith-mus' unchecked><div class="slider"></div></label></td>
         <td>Broadcast</td>
-        <td><label class="switch"><input type="checkbox" id='swith-bro' checked><div class="slider"></div></label></td></tr>
+        <td><label class="switch"><input type="checkbox" id='swith-bro' unchecked><div class="slider"></div></label></td></tr>
+  </table>
+  <table class='switch-tbl' id='tbl-org-size-switch'>
+    <tr><td>Very Small</td>
+        <td><label class="switch"><input type="checkbox" id='swith-vs' unchecked><div class="slider"></div></label></td>
+        <td>Small</td>
+        <td><label class="switch"><input type="checkbox" id='swith-sm' unchecked><div class="slider"></div></label></td></tr>
+    <tr><td>Medium</td>
+        <td><label class="switch"><input type="checkbox" id='swith-m' unchecked><div class="slider"></div></label></td>
+        <td>Large</td>
+        <td><label class="switch"><input type="checkbox" id='swith-l' unchecked><div class="slider"></div></label></td></tr>
+    <tr><td>Very Large</td>
+        <td><label class="switch"><input type="checkbox" id='swith-vl' unchecked><div class="slider"></div></label></td>
+    </tr>
   </table>
   <table id='tbl-org-searched'>
   </table>
