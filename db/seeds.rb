@@ -34,12 +34,12 @@ require 'csv'
 # puts "There are now #{Organization.count} rows in the organization table"
 
 # Destroyed the sample dataset
-# old_ids.each do |old_id|
-#   org = Organization.find_by(id: old_id)
-#   org.destroy
-# end
+old_ids = [1646, 1655, 1703, 1711, 1841, 1853, 2023, 2727, 9241]
+old_ids.each do |old_id|
+  org = Organization.find_by(id: old_id)
+  org.destroy
+end
 
-#
 # # Destroy the empty organziations
 # empty_org_ids = [9242, 9243]
 # empty_org_ids.each do |empty_org_id|
